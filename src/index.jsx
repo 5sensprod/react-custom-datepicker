@@ -99,9 +99,9 @@ function DatePicker({
   const { showCalendar, inputValue, toggleCalendar, closeCalendar, setInput } =
     useDatePickerState(value, dateFormat, onClose, checkError, setError)
 
-  useEffect(() => {
-    setInput(value)
-  }, [value, setInput])
+  // useEffect(() => {
+  //   setInput(value)
+  // }, [value, setInput])
 
   const [selectedDate, setSelectedDate] = useState(new Date())
   const calendarRef = useRef(null)
