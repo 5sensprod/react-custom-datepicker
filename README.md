@@ -197,6 +197,12 @@ Pour voir un exemple en direct de l'utilisation du composant react-custom-datepi
 
 [![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/priceless-rubin-554zjg)
 
+## Source sur GitHub
+
+Le code source de ce plugin est hébergé sur GitHub. Vous pouvez le consulter et le cloner à partir de l'adresse suivante :
+
+[https://github.com/5sensprod/react-custom-datepicker](https://github.com/5sensprod/react-custom-datepicker)
+
 ## Contribution
 
 Les contributions sont les bienvenues. Veuillez ouvrir une issue ou soumettre une pull request sur GitHub.
