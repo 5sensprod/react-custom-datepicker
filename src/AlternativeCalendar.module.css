@@ -1,33 +1,3 @@
-/* Default */
-
-/* .day,
-.grayedDay {
-    cursor: default;
-    text-align: center;
-    padding: 8px 4px;
-    transition: all 0.3s ease;
-}
-
-.day:hover,
-.month:hover,
-.year:hover {
-    background: #EEF0F4;
-    border-radius: 25%;
-    box-shadow: inset 7px 7px 14px #d4d6d9, inset -7px -7px 14px #ffffff;
-}
-
-.active {
-    background-color: #f0f0f0;
-}
-
-.navButton:hover {
-    opacity: 1;
-}
-
-.glassGrayedDay {
-    color: #712020;
-} */
-
 
 /* Glass */
 .glass.calendar {
