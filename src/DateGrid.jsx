@@ -80,6 +80,7 @@ function DateGrid({
           translations={translations}
           handleMonthClick={handleMonthClick}
           selectedDate={selectedDate}
+          designType={designType}
         />
       )}
 
@@ -93,6 +94,7 @@ function DateGrid({
           yearBlockSize={yearBlockSize}
           minYear={minYear}
           maxYear={maxYear}
+          designType={designType}
         />
       )}
     </>

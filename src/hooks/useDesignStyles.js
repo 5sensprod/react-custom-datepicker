@@ -30,6 +30,11 @@ const useDesignStyles = (designType = 'default') => {
   const activeClass = alternativeStyles[`${designClass}Active`]
   const headerClass = alternativeStyles[`${designClass}Header`]
   const todayClass = alternativeStyles[`${designClass}Today`]
+  const yearsContainerClass = alternativeStyles[`${designClass}YearsContainer`]
+  const yearClass = alternativeStyles[`${designClass}Year`]
+  const monthsContainerClass =
+    alternativeStyles[`${designClass}MonthsContainer`]
+  const monthClass = alternativeStyles[`${designClass}Month`]
 
   return {
     selectedStyles,
@@ -40,6 +45,10 @@ const useDesignStyles = (designType = 'default') => {
     activeClass,
     todayClass,
     headerClass,
+    yearsContainerClass,
+    yearClass,
+    monthsContainerClass,
+    monthClass,
   }
 }
 

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import styles from '../Calendar.module.css'
 import { abbreviateMonth } from '../utils/dateFunctions'
 import { handleNavigationKeys } from '../utils/dateNavigations'
+import useDesignStyles from '../hooks/useDesignStyles'
+import alternativeStyles from '../AlternativeCalendar.module.css'
 
 /**
  * Vue des mois dans le calendrier.
@@ -12,19 +14,31 @@ import { handleNavigationKeys } from '../utils/dateNavigations'
  * @param {Date} props.selectedDate - La date actuellement sélectionnée.
  * @param {Object} props.translations - Traductions pour les mois.
  */
-function MonthsView({ handleMonthClick, selectedDate, translations }) {
+function MonthsView({
+  handleMonthClick,
+  selectedDate,
+  translations,
+  designType,
+}) {
   const monthsRefs = useRef([])
 
   const handleMonthKeyDown = (e, index) => {
     handleNavigationKeys(e, index, 11, handleMonthClick, monthsRefs.current)
   }
 
+  const { selectedStyles, designClass, monthClass, monthsContainerClass } =
+    useDesignStyles(designType)
+
   return (
-    <div className={styles.monthsContainer}>
+    <div
+      className={`${selectedStyles.monthsContainer} ${styles.monthsContainer} ${
+        designClass ? alternativeStyles[designClass] : ''
+      } ${monthsContainerClass}`}
+    >
       {translations.shortMonths.map((month, index) => (
         <div
           key={month}
-          className={`${styles.month} ${
+          className={`${styles.month} ${monthClass} ${
             index === selectedDate.getMonth() ? styles.selectedMonth : ''
           }`}
           onClick={(event) => {

@@ -2,6 +2,8 @@ import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import styles from '../Calendar.module.css'
 import { handleNavigationKeys } from '../utils/dateNavigations'
+import useDesignStyles from '../hooks/useDesignStyles'
+import alternativeStyles from '../AlternativeCalendar.module.css'
 
 /**
  * Vue des années dans le calendrier.
@@ -21,7 +23,11 @@ function YearsView({
   yearBlockSize,
   minYear,
   maxYear,
+  designType = 'default',
 }) {
+  const { selectedStyles, designClass, yearsContainerClass, yearClass } =
+    useDesignStyles(designType)
+
   const yearsRefs = useRef([])
 
   const displayedYears = yearsBlock.slice(0, yearBlockSize)
@@ -38,11 +44,15 @@ function YearsView({
   }
 
   return (
-    <div className={styles.yearsContainer}>
+    <div
+      className={`${selectedStyles.yearsContainer} ${styles.yearsContainer} ${
+        designClass ? alternativeStyles[designClass] : ''
+      } ${yearsContainerClass}`}
+    >
       {displayedYears.map((year, index) => (
         <div
           key={year || index}
-          className={`${styles.year} ${
+          className={`${styles.year} ${yearClass} ${
             index === selectedDate.getYear() ? styles.selectedYear : ''
           }`}
           onClick={(event) => {
@@ -65,8 +75,8 @@ YearsView.propTypes = {
   selectedDate: PropTypes.instanceOf(Date).isRequired,
   yearsBlock: PropTypes.arrayOf(PropTypes.number).isRequired,
   yearBlockSize: PropTypes.number.isRequired,
-  minYear: PropTypes.number.isRequired,
-  maxYear: PropTypes.number.isRequired,
+  minYear: PropTypes.number,
+  maxYear: PropTypes.number,
 }
 
 export default YearsView
