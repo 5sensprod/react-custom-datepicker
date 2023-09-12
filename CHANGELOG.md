@@ -2,6 +2,12 @@
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
 
+## [1.1.3] - 2023-09-12
+
+- Bug où la saisie d'une date invalide effaçait le dernier caractère et conservait l'erreur après fermeture du calendrier. Ajout d'un état hasError dans useDateValidation pour une gestion optimale des erreurs.
+
+### Corrigé
+
 ## [1.1.2] - 2023-09-04
 
 ### Ajouté
