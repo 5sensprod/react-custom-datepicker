@@ -23,6 +23,7 @@ function useDateValidation(
   language = DEFAULT_CONFIG.LANGUAGE,
 ) {
   const [error, setError] = useState(null)
+  const [hasError, setHasError] = useState(false)
   const translations = getTranslations(language)
 
   function validate(value) {
@@ -39,6 +40,7 @@ function useDateValidation(
 
     if (validationResponse.isValid) {
       setError(null)
+      setHasError(false) // Si valide, pas d'erreur
       return true
     } else {
       const errorType = validationResponse.errorType
@@ -50,11 +52,12 @@ function useDateValidation(
         formattedError = translations.errors.invalidDate
       }
       setError(formattedError)
+      setHasError(true)
       return false
     }
   }
 
-  return [error, validate, setError]
+  return [error, validate, setError, hasError]
 }
 
 export default useDateValidation

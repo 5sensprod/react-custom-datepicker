@@ -87,7 +87,7 @@ function DatePicker({
   })
 
   // 6.3 Validation Hooks
-  const [error, validate, setError] = useDateValidation(
+  const [error, validate, setError, hasError] = useDateValidation(
     dateFormat,
     minYear,
     maxYear,
@@ -99,9 +99,11 @@ function DatePicker({
   const { showCalendar, inputValue, toggleCalendar, closeCalendar, setInput } =
     useDatePickerState(value, dateFormat, onClose, checkError, setError)
 
-  // useEffect(() => {
-  //   setInput(value)
-  // }, [value, setInput])
+  useEffect(() => {
+    if (!hasError) {
+      setInput(value)
+    }
+  }, [value, setInput, hasError])
 
   const [selectedDate, setSelectedDate] = useState(new Date())
   const calendarRef = useRef(null)
