@@ -2,6 +2,12 @@
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
 
+## [1.1.4] - 2023-09-13
+
+### Ajouté
+
+- Ajout dasn la documentation de la partie Accessibilité.
+
 ## [1.1.4] - 2023-09-12
 
 ### Corrigé

@@ -191,6 +191,15 @@ Vous pouvez personnaliser le comportement et l'apparence du DatePicker avec les 
     - `'neuro'`: Design effet neurmorphism.
     - `'glass'`: Design effet glassmorphism.
 
+## Accessibilité
+
+Le composant react-custom-datepicker offre une prise en charge de la navigation au clavier :
+
+  - Entrée (Enter) : Sélectionne une date ou exécute une action.
+  - Espace (Space) : Similaire à la touche "Enter".
+  - Flèches (Arrow keys) : Permettent de naviguer entre les éléments, comme les jours ou les mois.
+
+
 ## Exemple en direct
 
 Pour voir un exemple en direct de l'utilisation du composant react-custom-datepicker, cliquez sur le badge ci-dessous :
